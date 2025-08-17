@@ -1,0 +1,42 @@
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">О нас</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Подарочные сертификаты</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <a href="{{ url_for('main.index') }}" class="logo-link">
+                            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="WOKI Pizza" class="logo">
+                            <span class="logo-text">Пицца WOKI</span>
+                        </a>
+                    </div>
+                    
+                    <div class="auth-buttons">
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-login">Войти</a>
+                        <a href="{{ url_for('auth.register') }}" class="btn btn-register">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="nav-menu">
+            <div class="container">
+                <div class="nav-links">
+                    <a href="#">Пицца</a>
+                    <a href="#">Закуски</a>
+                    <a href="#">Напитки</a>
+                    <a href="#">Десерты</a>
+                    <a href="#">Комбо</a>
+                    <a href="#">Акции</a>
+                </div>
+            </div>
+        </nav>
+    </header>

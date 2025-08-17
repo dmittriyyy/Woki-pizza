@@ -3,6 +3,7 @@ from flask import Flask
 from .extensions import db
 from .routes.user import user
 from .routes.main import main  
+from .routes.auth import auth
 
 from .models.role import Role  # заменить потом на routes
 
@@ -12,6 +13,7 @@ def create_app():
 
     app.register_blueprint(user)  # нужно регистрировать blueprint
     app.register_blueprint(main)  
+    app.register_blueprint(auth)  
 
     db.init_app(app)              # подключает базу к приложению
     with app.app_context():

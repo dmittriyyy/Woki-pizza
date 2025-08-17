@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-form">
+        <h2>Вход в аккаунт</h2>
+        <form method="POST" action="{{ url_for('auth.login') }}">
+            {{ form.hidden_tag() }}
+            
+            <div class="form-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-control", placeholder="Ваш email") }}
+            </div>
+            
+            <div class="form-group">
+                {{ form.password.label }}
+                {{ form.password(class="form-control", placeholder="Пароль") }}
+            </div>
+            
+            <div class="form-options">
+                <label class="remember-me">
+                    {{ form.remember() }} Запомнить меня
+                </label>
+                <a href="{{ url_for('auth.forgot_password') }}" class="forgot-password">Забыли пароль?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Войти</button>
+            
+            <div class="auth-footer">
+                Нет аккаунта? <a href="{{ url_for('auth.register') }}">Зарегистрируйтесь</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
